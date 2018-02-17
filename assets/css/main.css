@@ -11,6 +11,7 @@ h4{
 }
 .containerImage{
   margin-top: 2em;
+  text-align: center;
 }
 .responsive-img{
   width: 15em;
@@ -33,4 +34,39 @@ footer{
   top: 1em;
   height: 15vh;
   background-color: #e57373;
+}
+
+.header2{
+  text-align: center;
+  font-weight: bold;
+}
+
+.btnWidth{
+  width: 10em !important;
+}
+
+.card-panel {
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: -webkit-box-shadow .25s;
+  transition: box-shadow .25s;
+  transition: box-shadow .25s, -webkit-box-shadow .25s;
+  padding: 24px;
+  margin: .5rem 0 1rem 0;
+  border-radius: 2px;
+  background-color: #ffe8ed;
+}
+
+.cyan {
+  background-color: #8edcb2 !important;
+}
+
+.registrarse{
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -10px;
 }
