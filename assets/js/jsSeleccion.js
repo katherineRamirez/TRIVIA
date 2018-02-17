@@ -1,17 +1,9 @@
-$(document).ready(function() {
-  let selecValue;
-  $('select').material_select();
+let selection = 
 
-  $('select').on('change', function() {
-    selecValue = this.value;
-    console.log(selecValue);
-  });
-});
+objeto_datos = new Object();
+objeto_datos.titulo = titulo;
 
-/* let seleccion = document.getElementById('seleccion');
-function sel() {
-  return seleccion.options[seleccion.selectedIndex].value;
-}
-seleccion.addEventListener('change', function() {
-  console.log('Event Triggered!');
-}); */
+let objeto_serializado = JSON.stringify(objeto_datos)
+
+
+window.localStorage.setItem('objdatos', objeto_serializado);

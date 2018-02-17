@@ -4,20 +4,17 @@ $(document).ready(function () {
 
   $('select').on('change', function () {
     selecValue = this.value;
-    window.location="index.html";
-    fetch('https://opentdb.com/api.php?amount=10&category=27&difficulty=medium&type=' + selecValue)
-      .then(function (response) {
-        // Turns the the JSON into a JS object
-        return response.json();
-      })
+    window.location = "index.html";
 
-      .then(function(data) {
-        console.log(data);
+    let selectionCall = selecValue;
 
-        let btnStart = document.getElementById('btnStart');
+    selection_datos = new Object();
+    selection_datos.selectionCall = selectionCall;
 
-        
+    let selection_serializado = JSON.stringify(selection_datos);
 
-      });
+
+    window.localStorage.setItem('objdatos', selection_serializado);
+
   });
 });
