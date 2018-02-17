@@ -1,22 +1,23 @@
-fetch('https://opentdb.com/api.php?amount=10&category=27')
-  .then(function(response) {
-    // Turns the the JSON into a JS object
-    return response.json();
-  })
+$(document).ready(function () {
+  let selecValue;
+  $('select').material_select();
 
-  .then(function(data) {
-    console.log(data);
+  $('select').on('change', function () {
+    selecValue = this.value;
+    window.location="index.html";
+    fetch('https://opentdb.com/api.php?amount=10&category=27&difficulty=medium&type=' + selecValue)
+      .then(function (response) {
+        // Turns the the JSON into a JS object
+        return response.json();
+      })
 
-    let containerQuestions = document.getElementById('containerQuestions');
-    let category = document.createElement('p');
-    category.setAttribute('class','text');
-    let textCategory = document.createTextNode('Category: Animals');
-    category.appendChild(textCategory);
-    let difficulty = document.createElement('p');
-    difficulty.setAttribute('class','text');
-    let textDifficulty = document.createTextNode('Difficulty: Medium');
-    difficulty.appendChild(textDifficulty);
-    containerQuestions.appendChild(category);
-    containerQuestions.appendChild(difficulty);
-      
+      .then(function(data) {
+        console.log(data);
+
+        let btnStart = document.getElementById('btnStart');
+
+        
+
+      });
   });
+});
