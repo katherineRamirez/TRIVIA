@@ -79,3 +79,18 @@ footer{
 .containerAbout p{
   color: black;
 }
+.CategoryQuestions, .DifficultyQuestions{
+  margin-top: 2em;
+}
+.CategoryQuestions p, .DifficultyQuestions p{
+  color: black;
+  text-align: center;
+}
+.contQuestion{
+margin-top: 2.5em;
+}
+.textQuestion{
+  color: black;
+  font-size: 2em;
+  text-align: center;
+}

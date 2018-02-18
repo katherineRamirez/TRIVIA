@@ -16,6 +16,7 @@ $(document).ready(function() {
 
     window.localStorage.setItem('objdatos', selection_serializado);
 
+
   });
 
 });
