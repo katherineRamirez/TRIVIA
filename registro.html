@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <link rel="shortcut icon" href="assets/images/pestaña.png">
+  <title>TRIVIA</title>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/grid.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/media.css">
+</head>
+<body>
+	
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center"><strong>REGISTRO</strong></a>
+    </div>
+  </nav>
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="first_name1" type="text" class="validate">
+      <label class="active" for="first_name2">Nombre</label>
+    </div>
+  </div>
+  <div id="mensaje1" class="errores">Dame tu nombre</div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="first_name2" type="text" class="validate">
+      <label class="active" for="first_name2">Apellido</label>
+    </div>
+  </div> 
+  <div id="mensaje2" class="errores">Dame tu apellido</div> 
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="email" type="email" class="validate">
+        <label for="email" data-error="wrong" data-success="right">Email</label>
+      </div>
+    </div> 
+  <div id="mensaje3" class="errores">Dame un mail correcto</div>   
+   <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+   </div>
+  <div id="mensaje4" class="errores">Dame una contraseña menor de 8 dígitos</div>
+   <div class="row">
+      <div class="col s9 offset-s3">
+        <a href="indexSelection.html" class="waves-effect waves-light btn" id="btnGetIn">ENTRAR</a>
+      </div>
+    </div>
+  <footer>
+    <div class="row">
+      <div class="col s3 offset-s2">
+        <a href="login.html" class="home"><i class="material-icons">home</i></a>
+        <p>Home</p>
+      </div>
+      <div class="col s3">
+        <a href="about.html" class="about"><i class="material-icons">info</i></a>
+        <p>About</p>
+      </div>
+      <div class="col s4">
+        <a href="" class="settings"><i class="material-icons">settings_applications</i></a>
+        <p>Settings</p>
+      </div>
+    </div> 
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script type="text/javascript" src="assets/js/registro.js"></script>
+</body>
+</html>
