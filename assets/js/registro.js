@@ -10,4 +10,5 @@ buttonRegister.addEventListener('click', e => {
     const promise = auth.createUserWithEmailAndPassword(userName, passwordUser);
     promise.cath(e=> console.log(e.message));
 
+
 });
