@@ -1,36 +1,31 @@
-let user = document.getElementById('user');
-let password = document.getElementById('password');
-let button = document.getElementById('button');
+    let email = document.getElementById('email');
+    let password = document.getElementById('password');
+    let button = document.getElementById('button');
 
-button.addEventListener('click', function() {
+    button.addEventListener('click', e => {
+        //Obtener email y password
+        const userEmail = email.value;
+        const passwordUser = password.value;
+        console.log(userEmail);
+        const auth = firebase.auth();
+        const promise = auth.signInWithEmailAndPassword(userEmail, passwordUser);
+        
 
-    let userName = user.value;
-    let passwordUser = password.value;
-    let usersA = farrayUsers();
-    let passwordA = farrayPassword();
+    });
 
-    for (let j = 0; j < usersA.length; j++) {
-        if (userName === usersA[j] && passwordUser === passwordA[j]) {
-            //alert('j');
-            window.location = 'index.html';
+
+    let logout = document.getElementById('logout');
+
+
+    logout.addEventListener('click', e => {
+        //Obtener email y password
+        firebase.auth().signOut();
+    });
+
+    firebase.auth().onAuthStateChanged(firebaseUser =>{
+        if(firebaseUser){
+            logout.classList.remove('hide');
+        }else{
+            logout.classList.add('hide');
         }
-    }
-
-
-});
-
-function farrayUsers() {
-    let arrayUsers = [];
-    for (let i = 0; i < users.length; i++) {
-        arrayUsers.push(users[i].user);
-    }
-    return arrayUsers;
-}
-
-function farrayPassword() {
-    let arrayPassword = [];
-    for (let i = 0; i < users.length; i++) {
-        arrayPassword.push(users[i].password);
-    }
-    return arrayPassword;
-}
+    })

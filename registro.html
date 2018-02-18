@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="assets/images/pestaña.png">
+    <title>TRIVIA</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/media.css">
+</head>
+<script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBvM9RYJwabL-P-mjMrDPF66tDwvfe5wW4",
+    authDomain: "trivia-5060d.firebaseapp.com",
+    databaseURL: "https://trivia-5060d.firebaseio.com",
+    projectId: "trivia-5060d",
+    storageBucket: "trivia-5060d.appspot.com",
+    messagingSenderId: "1003536136532"
+  };
+  firebase.initializeApp(config);
+</script>
+<body>
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">
+                <strong>TRIVIA</strong>
+            </a>
+
+        </div>
+    </nav>
+    <section id="firstSection">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 containerImage">
+                    <img class="responsive-img" src="assets/images/portada.png">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="thirdSection">
+        <div class="card-panel">
+            <h5 class="header2">Registro</h5>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="userRegistro" type="text">
+                            <label for="first_name">User</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="passwordRegistro" type="password">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <a class="btn cyan waves-effect waves-light right"  id="buttonRegister">Registrarse
+                                <i class="mdi-content-send right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="row">
+            <div class="col s3 offset-s2">
+                <a href="" class="home">
+                    <i class="material-icons">home</i>
+                </a>
+                <p>Home</p>
+            </div>
+            <div class="col s3">
+                <a href="" class="about">
+                    <i class="material-icons">info</i>
+                </a>
+                <p>About</p>
+            </div>
+            <div class="col s4">
+                <a href="" class="settings">
+                    <i class="material-icons">settings_applications</i>
+                </a>
+                <p>Settings</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript" src="assets/js/registro.js"></script>
+</body>
+
+</html>

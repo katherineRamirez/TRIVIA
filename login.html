@@ -14,6 +14,20 @@
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="assets/css/media.css">
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBvM9RYJwabL-P-mjMrDPF66tDwvfe5wW4",
+    authDomain: "trivia-5060d.firebaseapp.com",
+    databaseURL: "https://trivia-5060d.firebaseio.com",
+    projectId: "trivia-5060d",
+    storageBucket: "trivia-5060d.appspot.com",
+    messagingSenderId: "1003536136532"
+  };
+  firebase.initializeApp(config);
+</script>
 
 <body>
 
@@ -42,8 +56,8 @@
                 <form class="col s12">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="user" type="text">
-                            <label for="first_name">User</label>
+                            <input id="email" type="text">
+                            <label for="email">Email</label>
                         </div>
                     </div>
                     <div class="row">
@@ -54,7 +68,10 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <a class="btn cyan waves-effect waves-light right"  id="button">Iniciar Sesión
+                            <a class="btn cyan waves-effect waves-light right" id="button">Iniciar Sesión
+                                <i class="mdi-content-send right"></i>
+                            </a>
+                            <a class="btn cyan waves-effect waves-light right" id="logout">Cerrar Sesión
                                 <i class="mdi-content-send right"></i>
                             </a>
                             <a href="registro.html" class="brand-logo right">
@@ -90,9 +107,8 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script type="text/javascript" src="assets/js/dataUsers.js"></script>
     <script type="text/javascript" src="assets/js/users.js"></script>
+
 </body>
 
 </html>
