@@ -33,7 +33,7 @@ button.addEventListener('click', e => {
         auth.onAuthStateChanged(function (user) {
             if (user) {
                 console.log('si');
-                window.location = "index.html";
+                window.location = "indexSelection.html";
             }
         });
     }
