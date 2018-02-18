@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="assets/images/pestaña.png">
     <title>TRIVIA</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
@@ -40,8 +42,8 @@
                 <form class="col s12">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="name" type="text">
-                            <label for="first_name">Name</label>
+                            <input id="user" type="text">
+                            <label for="first_name">User</label>
                         </div>
                     </div>
                     <div class="row">
@@ -52,9 +54,9 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Iniciar Sesión
+                            <a class="btn cyan waves-effect waves-light right"  id="button">Iniciar Sesión
                                 <i class="mdi-content-send right"></i>
-                            </button>
+                            </a>
                             <a href="registro.html" class="brand-logo right">
                                 <br>
                                 <div class="registrarse">REGISTRARSE</div>
@@ -89,7 +91,8 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="assets/js/dataUsers.js"></script>
+    <script type="text/javascript" src="assets/js/users.js"></script>
 </body>
 
 </html>
