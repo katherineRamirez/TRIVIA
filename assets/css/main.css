@@ -31,7 +31,7 @@ p{
 }
 footer{
   position: relative;
-  top: 1em;
+  top: 4em;
   height: 15vh;
   background-color: #e57373;
 }
@@ -69,4 +69,13 @@ footer{
   margin-left: auto;
   margin-right: auto;
   margin-bottom: -10px;
+}
+.containerAbout{
+  margin-top: 3em;
+  margin-left: 2em;
+  background-color: #ffcdd2;
+  padding: 1em;
+}
+.containerAbout p{
+  color: black;
 }
