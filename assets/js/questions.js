@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   let selecValue;
   $('select').material_select();
 

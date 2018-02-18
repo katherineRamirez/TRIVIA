@@ -9,3 +9,4 @@ let objeto_serializado = JSON.stringify(objeto_datos);
 window.localStorage.setItem('objdatos', objeto_serializado);
 
 
+
