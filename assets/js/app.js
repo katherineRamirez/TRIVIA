@@ -30,17 +30,17 @@ fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' +
   	'<div class="col s6"><a href="#" id="false" class="waves-effect waves-light btn">Falso</a></div></div></div>')
 
   $('#true').click(function(){
-    if(data.results[0].correct_answer === data.results[0].correct_answer){
+    if(data.results[0].correct_answer == 'True'){
       $('#true').attr('href', 'correct.html');
-    }else if(data.results[0].correct_answer === data.results[0].incorrect_answer[0]){
+    }else if(data.results[0].correct_answer == 'False'){
       $('#true').attr('href', 'incorrect.html');
     }
   })
 
   $('#false').click(function(){
-    if(data.results[0].correct_answer === data.results[0].correct_answer){
+    if(data.results[0].correct_answer == 'False'){
       $('#false').attr('href', 'correct.html');
-    }else if(data.results[0].correct_answer === data.results[0].incorrect_answer[0]){
+    }else if(data.results[0].correct_answer == 'True'){
       $('#false').attr('href', 'incorrect.html');
     }
   })
