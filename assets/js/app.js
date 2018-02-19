@@ -58,10 +58,3 @@ fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' +
 
   });
 
-/* Creando container de preguntas de opción múltiple 
-$('#containerQuestionsMultipleChoice').append('<div class="container contQuestionMultiple"><div class="row"><div class="col s12">'+
-  data.results[0].question + '</div></div><div class="row"><div class="col s12><p>'+
-  data.results[0].incorrect_answer[0]+'</p></div></div><div class="row"></div><div class="col s12">'+
-  '</div><p>'+ data.results[0].incorrect_answer[1]+'</p></div></div><div class="row"></div><div class="col s12">'+
-  '</div><p>'+ data.results[0].correct_answer+'</p></div></div><div class="row"></div><div class="col s12">'+
-  '</div><p>'+ data.results[0].incorrect_answer[2]+'</p></div>')*/

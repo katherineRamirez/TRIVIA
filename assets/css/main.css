@@ -94,3 +94,16 @@ margin-top: 2.5em;
   font-size: 2em;
   text-align: center;
 }
+.options{
+  color: black;
+  padding-left: 1em;
+  font-size: 2em;
+  margin-top: 1em; 
+}
+.options a{
+  text-decoration: none;
+}
+.opt{
+  background-color: #f8bbd0;
+  margin-top: 1em;
+}
