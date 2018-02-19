@@ -5,13 +5,15 @@ selectionCalled = obj.selectionCall;
 
 let btnStart = document.getElementById('btnStart');
 if (selectionCalled === 'boolean') {
-  btnStart.addEventListener('click', function() {
-    btnStart.setAttribute('href', 'questions.html');
-  })
+  if (btnStart) {
+    btnStart.addEventListener('click', function () {
+      btnStart.setAttribute('href', 'questions.html');
+    });
+  }
 } else {
-  btnStart.addEventListener('click', function() {
+  btnStart.addEventListener('click', function () {
     btnStart.setAttribute('href', 'booleanQuestions.html');
-  })
+  });
 }
 fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' + selectionCalled)
 
@@ -38,21 +40,21 @@ fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' +
       '<div class="container contQuestion"><div class="row"><div class="col s6"><a href="#" id="true" class="waves-effect waves-light btn">Verdadero</a></div>' +
       '<div class="col s6"><a href="#" id="false" class="waves-effect waves-light btn">Falso</a></div></div></div>')
 
-  $('#true').click(function(){
-    if(data.results[0].correct_answer == 'True'){
-      $('#true').attr('href', 'correct.html');
-    }else if(data.results[0].correct_answer == 'False'){
-      $('#true').attr('href', 'incorrect.html');
-    }
-  })
+    $('#true').click(function () {
+      if (data.results[0].correct_answer == 'True') {
+        $('#true').attr('href', 'correct.html');
+      } else if (data.results[0].correct_answer == 'False') {
+        $('#true').attr('href', 'incorrect.html');
+      }
+    })
 
-  $('#false').click(function(){
-    if(data.results[0].correct_answer == 'False'){
-      $('#false').attr('href', 'correct.html');
-    }else if(data.results[0].correct_answer == 'True'){
-      $('#false').attr('href', 'incorrect.html');
-    }
-  })
+    $('#false').click(function () {
+      if (data.results[0].correct_answer == 'False') {
+        $('#false').attr('href', 'correct.html');
+      } else if (data.results[0].correct_answer == 'True') {
+        $('#false').attr('href', 'incorrect.html');
+      }
+    })
 
   });
 
