@@ -1,4 +1,96 @@
-@media (min-width: 568px) and (max-width: 1200px) {
+@media (min-width: 568px) and (max-width: 1500px) {
 
+	#footer-selection{
+		margin-top: 15.3em;
+	}
+	#containerQuestionsMultipleChoice p{
+		color: black;
+	}
+	#footerBoolean, #footerIndex{
+		margin-top: 9em;
+	}
+	#footerIncorrect{
+		margin-top: 5em;
+	}
+	#footerQuestions{
+		margin-top: 17.5em;
+	}
 
+}
+
+@media (min-width: 200px) and (max-width: 567px) {
+
+	#footer-selection, #footerBoolean{
+		margin-top: 5em;
+	}
+	#SecondSection h5{
+		font-size: 1.5em;
+		margin-top: 2em;
+	}
+	#footer-about{
+		margin-top: 3.4em;
+	}
+	.containerAbout{
+		margin-left: 1em;
+	}
+	.imgLogin{
+		width: 9em;
+	}
+	.inSesion{
+		position: relative;
+		right: 2.5em;
+	}
+	.ceSesion{
+		position: relative;
+		top: 1em;
+		right: 2em;
+	}
+	.registrarse{
+		position: relative;
+		right: 6em;
+	}
+	#containerQuestionsMultipleChoice p{
+		color: black;
+	}
+	
+	.titleCorrect{
+		font-size: 4em;
+		position: relative;
+		right: 1.5em;
+	}
+	.imgCorrect{
+		position: relative;
+		right: 4em;
+	}
+	#btnStart{
+		position: relative;
+		right: 5em;
+	}
+	.wrongAnswer{
+		font-size: 2em;
+		width: 10em;
+		margin: 0;
+		top: 1em;
+		position: relative;
+		right: 2.5em;
+	}
+	.imgWrong{
+		position: relative;
+		right: 4em;
+		top: 2.5em;
+		margin-bottom: 2em;
+	}
+	#footerIncorrect, #footerIndex{
+		margin-top: 3em;
+	}
+	.welcome{
+		font-size: 2em;
+		width: 10em;
+		margin: 0;
+		top: 1em;
+		position: relative;
+		right: 3em;
+		margin-bottom: 1em;
+	}
+	
 }

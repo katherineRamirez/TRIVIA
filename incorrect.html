@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/grid.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/media.css">
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
 <body>
@@ -21,22 +22,22 @@
     </div>
   </nav>
   <div class="row">
-    <div class="col s10 col push-s2">
-      <h3>Mmm wrong answer!</h3>
+    <div class="col s8 col push-s4">
+      <h3 class="wrongAnswer">Mmm wrong answer!</h3>
     </div>
   </div>
   <div class="row">
-    <div class="col s10 col push-s2">
-      <img class="responsive-img" src="assets/images/wrong.png">
+    <div class="col s7 col push-s5">
+      <img class="responsive-img imgWrong" src="assets/images/wrong.png">
     </div>
   </div>
   <div class="row">
-    <div class="col s10 col push-s2">
-      <a href="questions.html" class="waves-effect waves-light btn" id="btnStart">NEXT QUESTION!!</a>
+    <div class="col s7 col push-s5">
+      <a href="questions.html" class="waves-effect waves-light btn btnNext" id="btnStart">NEXT QUESTION!!</a>
     </div>
   </div>
 
-  <footer>
+  <footer id="footerIncorrect">
         <div class="row">
             <div class="col s3 offset-s2">
                 <a href="login.html" class="home">

@@ -22,9 +22,12 @@ h4 {
 }
 
 .waves-effect {
+    margin-top: 2em;
     margin-left: 1.7em;
 }
-
+#footerCorrect{
+    margin-top: 6em;
+}
 .material-icons {
     text-decoration: none;
     color: white;
@@ -39,8 +42,8 @@ p {
 
 footer {
     position: relative;
-    top: 20em;
-    height: 15vh;
+    top: 0;
+    padding-bottom: 1em;
     background-color: #e57373;
 }
 
@@ -81,9 +84,13 @@ footer {
 
 .containerAbout {
     margin-top: 3em;
-    margin-left: 2em;
+    margin-left: 10em;
     background-color: #ffcdd2;
     padding: 1em;
+    padding-left: 3em;
+}
+#footer-about, #footer-selection{
+    margin-top: 11.7em;
 }
 
 .containerAbout p {
@@ -179,6 +186,3 @@ footer {
     /* border: 1px black solid; */
 }
 
-p {
-    color: black;
-}
