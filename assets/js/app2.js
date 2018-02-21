@@ -3,10 +3,11 @@ let objSerialized = window.localStorage.getItem('objdatos');
 obj = JSON.parse(objSerialized);
 selectionCalled = obj.selectionCall;
 let iQu = 0;
+
 function shuffle(a) {
   for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
 }
@@ -51,11 +52,13 @@ fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' +
     }
 
     questionsAnswer(0);
+    let choice = [];
+    
 
     let containerQuestionsMultipleChoice = document.querySelector('#containerQuestionsMultipleChoice');
     containerQuestionsMultipleChoice.addEventListener('click', function () {
-
-      if (iQu<10) {
+      
+      if (iQu < 9) {
 
         let objetivo = event.target.firstChild.textContent;
         console.log(typeof objetivo);
@@ -64,13 +67,16 @@ fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' +
           console.log('correcta');
           window.location = "correct.html";
 
-        }else{
+        } else {
           console.log('No es correcta');
           window.location = "incorrect.html";
-
         }
+        choice.push(objetivo);
+        
         iQu++;
         questionsAnswer(iQu);
+      } else {
+        solve();
       }
     })
 
