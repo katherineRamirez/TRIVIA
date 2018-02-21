@@ -1,109 +1,184 @@
-*{
-  margin: 0;
-  padding: 0;
-}
-body{
-  background-color: #ffebee;
-}
-h4{
-  position: relative;
-  right: 0.50em;
-}
-.containerImage{
-  margin-top: 2em;
-  text-align: center;
-}
-.responsive-img{
-  width: 15em;
-}
-.waves-effect{
-  margin-left: 1.7em;
-}
-.material-icons{
-  text-decoration: none;
-  color: white;
-  margin-top: 0.50em;
-}
-p{
-  position: relative;
-  right: 0.50em;
-  color: white;
-}
-footer{
-  position: relative;
-  top: 4em;
-  height: 15vh;
-  background-color: #e57373;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.header2{
-  text-align: center;
-  font-weight: bold;
+body {
+    background-color: #ffebee;
 }
 
-.btnWidth{
-  width: 10em !important;
+h4 {
+    position: relative;
+    right: 0.50em;
+}
+
+.containerImage {
+    margin-top: 2em;
+    text-align: center;
+}
+
+.responsive-img {
+    width: 15em;
+}
+
+.waves-effect {
+    margin-left: 1.7em;
+}
+
+.material-icons {
+    text-decoration: none;
+    color: white;
+    margin-top: 0.50em;
+}
+
+p {
+    position: relative;
+    right: 0.50em;
+    color: white;
+}
+
+footer {
+    position: relative;
+    top: 20em;
+    height: 15vh;
+    background-color: #e57373;
+}
+
+.header2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.btnWidth {
+    width: 10em !important;
 }
 
 .card-panel {
-  -webkit-transition: -webkit-box-shadow .25s;
-  transition: -webkit-box-shadow .25s;
-  transition: box-shadow .25s;
-  transition: box-shadow .25s, -webkit-box-shadow .25s;
-  padding: 24px;
-  margin: .5rem 0 1rem 0;
-  border-radius: 2px;
-  background-color: #ffe8ed;
+    -webkit-transition: -webkit-box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    transition: box-shadow .25s;
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    padding: 24px;
+    margin: .5rem 0 1rem 0;
+    border-radius: 2px;
+    background-color: #ffe8ed;
 }
 
 .cyan {
-  background-color: #8edcb2 !important;
+    background-color: #8edcb2 !important;
 }
 
-.registrarse{
-  font-size: 1em;
-  font-weight: bold;
+.registrarse {
+    font-size: 1em;
+    font-weight: bold;
 }
 
 .row {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: -10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -10px;
 }
-.containerAbout{
-  margin-top: 3em;
-  margin-left: 2em;
-  background-color: #ffcdd2;
-  padding: 1em;
+
+.containerAbout {
+    margin-top: 3em;
+    margin-left: 2em;
+    background-color: #ffcdd2;
+    padding: 1em;
 }
-.containerAbout p{
-  color: black;
+
+.containerAbout p {
+    color: black;
 }
-.CategoryQuestions, .DifficultyQuestions{
-  margin-top: 2em;
+
+.CategoryQuestions,
+.DifficultyQuestions {
+    margin-top: 2em;
 }
-.CategoryQuestions p, .DifficultyQuestions p{
-  color: black;
-  text-align: center;
+
+.CategoryQuestions p,
+.DifficultyQuestions p {
+    color: black;
+    text-align: center;
 }
-.contQuestion{
-margin-top: 2.5em;
+
+.contQuestion {
+    margin-top: 2.5em;
 }
-.textQuestion{
-  color: black;
-  font-size: 2em;
-  text-align: center;
+
+.textQuestion {
+    color: black;
+    font-size: 2em;
+    text-align: center;
 }
-.options{
-  color: black;
-  padding-left: 1em;
-  font-size: 2em;
-  margin-top: 1em; 
+
+.options {
+    /* border: 1px black solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.options a{
-  text-decoration: none;
+
+.options a {
+    text-decoration: none;
 }
-.opt{
-  background-color: #f8bbd0;
-  margin-top: 1em;
+
+.opt {
+    background-color: #f8bbd0;
+    margin-top: 1em;
+}
+
+#containerCK {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#containerCK {
+    /* border: 1px blue solid; */
+}
+
+.pQuestion {
+    color: black;
+}
+
+#containerQuestionsMultipleChoice {
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: black;
+    /* border: 1px black solid; */
+}
+
+.divAnswer {
+    background-color: #e57373;
+    height: 2em;
+    min-width: 20em;
+    /* border: 1px blue solid; */
+    margin-top: 1em;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    /* border: 0px solid #000000; */
+}
+
+.divAnswer:hover {
+    cursor: pointer;
+}
+
+.pQuestion {
+    color: black;
+}
+
+.questions {
+    /* border: 1px black solid; */
+}
+
+p {
+    color: black;
 }

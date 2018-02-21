@@ -2,6 +2,7 @@ let objSerialized = window.localStorage.getItem('objdatos');
 
 obj = JSON.parse(objSerialized);
 selectionCalled = obj.selectionCall;
+let iQu = 0;
 
 fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' + selectionCalled)
 
@@ -13,43 +14,56 @@ fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' +
   .then(function (data) {
     console.log(data);
 
-    let opt1 = data.results[0].incorrect_answers[0];
-    let opt2 = data.results[0].incorrect_answers[1];
-    let opt3 = data.results[0].correct_answer;
-    let opt4 = data.results[0].incorrect_answers[2];
-
-    let arrIncorrect = [];
-    
-
-    for(let j = 0; j < data.results[0].incorrect_answers[0].length; j++){
-      //console.log(data.results[0].incorrect_answers[j])
-      let incorrectAnswers = data.results[0].incorrect_answers[j];
-      //console.log(incorrectAnswers)
-      arrIncorrect.push(incorrectAnswers);  
+    function questionsAnswer(index) {
+      //Constructor de preguntas
+      let questions = document.querySelector('.questions');
+      questions.innerHTML = '';
+      let textQuestion = document.createTextNode(data.results[index].question);
+      let pQuestion = document.createElement('p');
+      let divQuestion = document.createElement('div');
+      pQuestion.appendChild(textQuestion);
+      divQuestion.appendChild(pQuestion);
+      questions.appendChild(divQuestion);
+      let options = document.querySelector('.options');
+      options.innerHTML = '';
+      let arrayData = [];
+      arrayData.push(data.results[index].correct_answer);
+      for (let i = 0; i < data.results[i].incorrect_answers.length; i++) {
+        arrayData.push(data.results[i].incorrect_answers[i]);
+      }
+      for (let j = 0; j < arrayData.length; j++) {
+        let textAnswer = document.createTextNode(arrayData[j]);
+        let pAnswer = document.createElement('p');
+        let divAnswer = document.createElement('div');
+        pAnswer.appendChild(textAnswer);
+        divAnswer.appendChild(pAnswer);
+        divAnswer.className = 'divAnswer';
+        options.appendChild(divAnswer);
+      }
     }
-    //console.log(arrIncorrect);
 
-    for(let k = 0; k < arrIncorrect[0].length; k++){
-      //console.log(data.results[0].incorrect_answers[j])
-      let arr = arrIncorrect[k];
-      //console.log(arr);
+    questionsAnswer(0);
 
-    }
+    let containerQuestionsMultipleChoice = document.querySelector('#containerQuestionsMultipleChoice');
+    containerQuestionsMultipleChoice.addEventListener('click', function () {
+      iQu++;
+      if (iQu<10) {
+        questionsAnswer(iQu);
+        let objetivo = event.target.firstChild;
+        console.log(objetivo);
+        if (objetivo === data.results[iQu].correct_answer) {
+          console.log('correcta');
+          window.location = "correct.html";
 
-    /*Creando container de preguntas de opción múltiple */
-$('#containerQuestionsMultipleChoice').append('<div class="row"><div class="col s11 offset-s1"><h3 class="titleMultiple">'+data.results[0].question+'</h3></div></div><div class="row">'+
-  '<div class="col s11 offset-s1 opt"><a id="opt1" href="#"><p class="options">'+data.results[0].incorrect_answers[0]+'</p></a></div></div><div class="row"><div class="col s11 offset-s1 opt">'+
-  '<a id="opt2" href="#"><p class="options">'+data.results[0].incorrect_answers[1]+'</p></a></div></div><div class="row"><div class="col s11 offset-s1 opt"><a id="opt3" href="#"><p class="options">'+
-  data.results[0].correct_answer+'</p></a></div></div><div class="row"><div class="col s11 offset-s1 opt"><a id="opt4" href="#"><p class="options">'+
-  data.results[0].incorrect_answers[2]+'</p></a></div></div></div>')
+        }else{
+          console.log('No es correcta');
+          window.location = "incorrect.html";
+
+        }
+      }
+    })
 
 
-});
 
-  
 
-  
-  
-  
-  
-  
+  });
