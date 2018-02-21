@@ -3,6 +3,13 @@ let objSerialized = window.localStorage.getItem('objdatos');
 obj = JSON.parse(objSerialized);
 selectionCalled = obj.selectionCall;
 let iQu = 0;
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' + selectionCalled)
 
@@ -28,9 +35,10 @@ fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' +
       options.innerHTML = '';
       let arrayData = [];
       arrayData.push(data.results[index].correct_answer);
-      for (let i = 0; i < data.results[i].incorrect_answers.length; i++) {
-        arrayData.push(data.results[i].incorrect_answers[i]);
+      for (let i = 0; i < data.results[index].incorrect_answers.length; i++) {
+        arrayData.push(data.results[index].incorrect_answers[i]);
       }
+      shuffle(arrayData);
       for (let j = 0; j < arrayData.length; j++) {
         let textAnswer = document.createTextNode(arrayData[j]);
         let pAnswer = document.createElement('p');
@@ -46,11 +54,12 @@ fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' +
 
     let containerQuestionsMultipleChoice = document.querySelector('#containerQuestionsMultipleChoice');
     containerQuestionsMultipleChoice.addEventListener('click', function () {
-      iQu++;
+
       if (iQu<10) {
-        questionsAnswer(iQu);
-        let objetivo = event.target.firstChild;
-        console.log(objetivo);
+
+        let objetivo = event.target.firstChild.textContent;
+        console.log(typeof objetivo);
+        console.log(data.results[iQu].correct_answer);
         if (objetivo === data.results[iQu].correct_answer) {
           console.log('correcta');
           window.location = "correct.html";
@@ -60,6 +69,8 @@ fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' +
           window.location = "incorrect.html";
 
         }
+        iQu++;
+        questionsAnswer(iQu);
       }
     })
 
