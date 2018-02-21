@@ -26,7 +26,13 @@ fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' +
       //Constructor de preguntas
       let questions = document.querySelector('.questions');
       questions.innerHTML = '';
-      let textQuestion = document.createTextNode(data.results[index].question);
+      let parser = new DOMParser();
+      let value = data.results[index].question;
+      // console.log(value);
+      let valueReady = parser.parseFromString(value, "text/html");
+      // console.log('aaaaaaaaaaaaaaaa', valueReady.firstElementChild.lastChild.firstChild.textContent);
+      let textQuestion = document.createTextNode(valueReady.firstElementChild.lastChild.firstChild.textContent);
+      // console.log(textQuestion.textContent);
       let pQuestion = document.createElement('p');
       let divQuestion = document.createElement('div');
       pQuestion.appendChild(textQuestion);
@@ -41,7 +47,9 @@ fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' +
       }
       shuffle(arrayData);
       for (let j = 0; j < arrayData.length; j++) {
-        let textAnswer = document.createTextNode(arrayData[j]);
+        let textAns = arrayData[j];
+        let valanswerReady = parser.parseFromString(textAns, "text/html");
+        let textAnswer = document.createTextNode(valanswerReady.firstElementChild.lastChild.firstChild.textContent);
         let pAnswer = document.createElement('p');
         let divAnswer = document.createElement('div');
         pAnswer.appendChild(textAnswer);
@@ -53,11 +61,11 @@ fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' +
 
     questionsAnswer(0);
     let choice = [];
-    
+
 
     let containerQuestionsMultipleChoice = document.querySelector('#containerQuestionsMultipleChoice');
     containerQuestionsMultipleChoice.addEventListener('click', function () {
-      
+
       if (iQu < 9) {
 
         let objetivo = event.target.firstChild.textContent;
@@ -72,7 +80,7 @@ fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' +
           window.location = "incorrect.html";
         }
         choice.push(objetivo);
-        
+
         iQu++;
         questionsAnswer(iQu);
       } else {
