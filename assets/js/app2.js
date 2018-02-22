@@ -21,6 +21,11 @@ fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' +
 
   .then(function (data) {
     console.log(data);
+    let questionCorrect = [];
+    let questionIncorrect = [];
+
+    let choiceCorrects = [];
+    let choiceIncorrects = [];
 
     function questionsAnswer(index) {
       //Constructor de preguntas
@@ -60,35 +65,57 @@ fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=' +
     }
 
     questionsAnswer(0);
-    let choice = [];
 
 
     let containerQuestionsMultipleChoice = document.querySelector('#containerQuestionsMultipleChoice');
     containerQuestionsMultipleChoice.addEventListener('click', function () {
 
-      if (iQu < 9) {
+      if (iQu < data.results.length) {
 
         let objetivo = event.target.firstChild.textContent;
         console.log(typeof objetivo);
         console.log(data.results[iQu].correct_answer);
         if (objetivo === data.results[iQu].correct_answer) {
           console.log('correcta');
-          window.location = "correct.html";
+          choiceCorrects.push(data.results[iQu].correct_answer);
+          questionCorrect.push(data.results[iQu].question);
+          console.log(choiceCorrects);
+          console.log(questionCorrect);
+
+          // window.location = "correct.html";
 
         } else {
           console.log('No es correcta');
-          window.location = "incorrect.html";
+          choiceIncorrects.push(data.results[iQu].correct_answer);
+          questionIncorrect.push(data.results[iQu].question);
+          console.log(choiceIncorrects);
+          console.log(questionIncorrect);
+
+          // window.location = "incorrect.html";
         }
-        choice.push(objetivo);
 
         iQu++;
-        questionsAnswer(iQu);
+        if (iQu < data.results.length) {
+          questionsAnswer(iQu);
+        }
+
       } else {
-        solve();
+        console.log(choiceCorrects);
+        console.log(choiceIncorrects);
+
+        let arrayCorrects = choiceCorrects;
+        let arrayIncorrects = choiceIncorrects;
+
+        objeto_datos = new Object();
+        objeto_datos.arrayCorrects = arrayCorrects;
+        objeto_datos.arrayIncorrects = arrayIncorrects;
+        objeto_datos.questionCorrect = questionCorrect;
+        objeto_datos.questionIncorrect = questionIncorrect;
+
+        let objeto_serializadoCI = JSON.stringify(objeto_datos);
+        window.localStorage.setItem('objdatos', objeto_serializadoCI);
+
+        window.location = "resuls.html";
       }
     })
-
-
-
-
   });
